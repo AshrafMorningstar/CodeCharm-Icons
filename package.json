@@ -1,0 +1,117 @@
+{
+  "name": "codecharm-icons",
+  "displayName": "CodeCharm Icons",
+  "description": "💝 Charming and vibrant icon theme for VS Code with extensive file, folder, and language support",
+  "version": "1.0.0",
+  "publisher": "codecharm",
+  "author": {
+    "name": "CodeCharm"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codecharm/codecharm-icons"
+  },
+  "bugs": {
+    "url": "https://github.com/codecharm/codecharm-icons/issues"
+  },
+  "keywords": [
+    "icons",
+    "theme",
+    "icon-theme",
+    "file-icons",
+    "folder-icons",
+    "vscode-icons",
+    "charming",
+    "vibrant",
+    "colorful"
+  ],
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "logo.png",
+  "galleryBanner": {
+    "color": "#1e1e2e",
+    "theme": "dark"
+  },
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "codecharm-base",
+        "label": "CodeCharm Icons - 🫐 Base",
+        "path": "./themes/codecharm-base.json"
+      },
+      {
+        "id": "codecharm-light",
+        "label": "CodeCharm Icons - 🥥 Light",
+        "path": "./themes/codecharm-light.json"
+      },
+      {
+        "id": "codecharm-soft",
+        "label": "CodeCharm Icons - 🍇 Soft",
+        "path": "./themes/codecharm-soft.json"
+      },
+      {
+        "id": "codecharm-warm",
+        "label": "CodeCharm Icons - 🍓 Warm",
+        "path": "./themes/codecharm-warm.json"
+      }
+    ],
+    "configuration": {
+      "title": "CodeCharm Icons",
+      "properties": {
+        "codecharm-icons.hidesExplorerArrows": {
+          "type": "boolean",
+          "default": false,
+          "description": "Set to true to disable folding arrows next to folder icons."
+        },
+        "codecharm-icons.outlinedFolders": {
+          "type": "string",
+          "default": "when-expanded",
+          "enum": [
+            "when-expanded",
+            "always",
+            "never"
+          ],
+          "enumDescriptions": [
+            "Use outlined folder icons when the folder is expanded",
+            "Always use outlined folder icons",
+            "Always use filled folder icons"
+          ],
+          "description": "Configure when to use outlined folder icons."
+        },
+        "codecharm-icons.associations.languages": {
+          "type": "object",
+          "default": {},
+          "description": "Custom icon associations for language IDs. Example: { \"typescriptreact\": \"react-typescript\" }"
+        },
+        "codecharm-icons.associations.extensions": {
+          "type": "object",
+          "default": {},
+          "description": "Custom icon associations for file extensions. Example: { \"spec.ts\": \"test-blue\" }"
+        },
+        "codecharm-icons.associations.files": {
+          "type": "object",
+          "default": {},
+          "description": "Custom icon associations for specific file names. Example: { \"vite.config.ts\": \"vite\" }"
+        },
+        "codecharm-icons.associations.folders": {
+          "type": "object",
+          "default": {},
+          "description": "Custom icon associations for folder names. Example: { \"typings\": \"folder_types\" }"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "generate-icons": "node scripts/generate-icons.js",
+    "verify-icons": "node scripts/verify-icons.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}

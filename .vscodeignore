@@ -1,0 +1,9 @@
+.vscode/**
+.vscode-test/**
+scripts/**
+node_modules/**
+.gitignore
+.git/**
+*.vsix
+README.md
+.editorconfig
